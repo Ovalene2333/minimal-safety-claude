@@ -1,0 +1,30 @@
+name: Domain Update / 域名规则补充或修正
+description: 提议向 claude-egress 新增官方/关联域名，或反馈误伤域名
+title: "[Domain]: "
+labels: ["enhancement", "rules"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: 域名归属分类
+      options:
+        - core (Claude / Anthropic 专属后缀)
+        - services (外部认证 / CDN / 遥测精确主机)
+        - shared-optional (多应用共享的第三方服务)
+        - false-positive (误匹配/应移除)
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: 目标域名或后缀
+      placeholder: "例如：+.example.com 或 sub.example.com"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 验证依据
+      description: 请附上官方文档链接、Mihomo 连接命中日志或复现场景说明（注意脱敏）。
+    validations:
+      required: true

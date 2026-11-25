@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Generated / private proxy configs (NEVER commit real credentials or subscriptions)
+preview.yaml
+*.local.yaml
+*.secret.yaml
+clash-verge.yaml
+profiles/
+backups/
+work/
+
+# Archives & OS artifacts
+*.zip
+.DS_Store
+Thumbs.db
+desktop.ini

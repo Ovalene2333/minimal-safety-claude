@@ -1,0 +1,34 @@
+[
+  {
+    "host": "api.anthropic.com",
+    "rule": "claude-egress",
+    "chains": [
+      "TW-ISP-Node-01",
+      "egress"
+    ]
+  },
+  {
+    "host": "clau.de",
+    "rule": "claude-egress",
+    "chains": [
+      "TW-ISP-Node-01",
+      "egress"
+    ]
+  },
+  {
+    "host": "claudemcpclient.com",
+    "rule": "claude-egress",
+    "chains": [
+      "TW-ISP-Node-01",
+      "egress"
+    ]
+  },
+  {
+    "host": "browser-intake-us5-datadoghq.com",
+    "rule": "claude-egress",
+    "chains": [
+      "TW-ISP-Node-01",
+      "egress"
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+# 迁移时只修改 proxies 中的节点名，需与你输入配置中的 proxies[].name 完全一致。
+# 使用手动 select 模式，保持单次会话期间出口 IP 稳定，避免自动切换触发风控或断流。
+name: Claude
+type: select
+proxies:
+- TW-ISP-Node-01
+- TW-ISP-Node-02

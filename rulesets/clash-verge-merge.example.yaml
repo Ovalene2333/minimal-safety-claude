@@ -1,0 +1,30 @@
+# Clash Verge Rev - 扩展合并配置模板 (Merge)
+# 用法：在 Clash Verge 中右键目标订阅 ->「编辑扩展合并」，将本文件内容合并进去。
+# 注意：实际出口组名称请与 clash-verge-prepend.example.yaml 保持一致（默认为 egress）。
+
+rule-providers:
+  claude-egress:
+    type: inline
+    behavior: domain
+    payload:
+      - +.anthropic.com
+      - +.claude.ai
+      - +.claude.com
+      - +.clau.de
+      - +.claudemcpclient.com
+      - +.claudemcpcontent.com
+      - +.claudeusercontent.com
+      - servd-anthropic-website.b-cdn.net
+      - anthropic.com.cdn.cloudflare.net
+      - anthropic.auth0.com
+      - anthropic-com.ghost.io
+      - http-intake.logs.us5.datadoghq.com
+      - browser-intake-us5-datadoghq.com
+
+# 若尚未在订阅中定义专用策略组，可取消下方注释并替换为你的合规节点名：
+# proxy-groups:
+#   - name: egress
+#     type: select # 若偏重自动高可用可改 fallback，但务必保留 empty-fallback: REJECT 且禁止加入 DIRECT
+#     proxies:
+#       - <Your-TW-Node-01>
+#       - <Your-TW-Node-02>

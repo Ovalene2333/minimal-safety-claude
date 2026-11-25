@@ -1,0 +1,25 @@
+# Active Claude rule-set definition (sanitized, no credentials).
+# Usage: include in Clash Verge Merge / Mihomo rule-providers and reference as RULE-SET,claude-egress,<YourGroup>.
+rule-providers:
+  claude-egress:
+    type: inline
+    behavior: domain
+    payload:
+      # 7 dedicated Anthropic / Claude suffixes (covers root + subdomains)
+      - +.anthropic.com
+      - +.claude.ai
+      - +.claude.com
+      - +.clau.de
+      - +.claudemcpclient.com
+      - +.claudemcpcontent.com
+      - +.claudeusercontent.com
+      # 6 exact external hosts (CDN / Auth / Docs / Official Telemetry)
+      - servd-anthropic-website.b-cdn.net
+      - anthropic.com.cdn.cloudflare.net
+      - anthropic.auth0.com
+      - anthropic-com.ghost.io
+      - http-intake.logs.us5.datadoghq.com
+      - browser-intake-us5-datadoghq.com
+
+rules:
+  - RULE-SET,claude-egress,egress

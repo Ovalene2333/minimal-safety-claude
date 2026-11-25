@@ -1,0 +1,10 @@
+# Clash Verge Rev - 前置规则模板 (Prepend Rules)
+# 用法：在 Clash Verge 中右键目标订阅 ->「编辑前置规则」，将下方条目置入 prepend 列表中。
+# 目的：确保 Claude 流量先于订阅自带的 geosite-category-ai / GEOIP / MATCH 规则命中指定出口组。
+
+prepend:
+  - RULE-SET,claude-egress,egress
+  # 可选：若存在直接走通用端口的 Claude Code 桌面/CLI 进程，可按需保留进程兜底规则
+  # - PROCESS-NAME,claude.exe,egress
+  # - PROCESS-NAME,Claude.exe,egress
+  # - PROCESS-NAME,claude,egress

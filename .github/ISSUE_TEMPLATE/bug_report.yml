@@ -1,0 +1,27 @@
+name: Bug Report / 规则或脚本问题
+description: 反馈 compose.py、verify_mihomo.py、模板错误或文档问题
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: 请在提交前确认已删除所有节点密码、订阅链接、API 密钥和个人路径。
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 清晰描述遇到的问题及预期行为。
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 运行环境
+      description: 例如：Windows 11 + Clash Verge Rev vX.X + Mihomo alpha-xxx / Python 3.11
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 复现步骤或脱敏日志
+      render: text
